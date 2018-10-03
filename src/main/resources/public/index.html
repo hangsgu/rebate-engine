@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head onload="getData()">
+    <title>Web Shop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+/* Style the header */
+.header {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.column1 {
+	float: left;
+	width: 60%;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.column2 {
+	float: left;
+	width: 40%;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+button {
+	width: 300px;
+}
+
+label {
+	float: left;
+	width: 200px;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	background: lightcyan;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+    </style>
+    <script type="text/javascript" src="datahandler.js"></script>
+
+</head>
+
+
+<body onload="getData()">
+
+<div class="header">
+    <h1>Web Shop Application</h1>
+</div>
+
+<div class="row">
+    <div class="column1">
+        <h2>Product Catalog</h2>
+        <table id="catalog">
+            <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="column2">
+
+        <h2>ActiveRules</h2>
+        <table id="rules">
+            <tr>
+                <th>Rebate Rule Names</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column1">
+        <h2>Cart</h2>
+        <table id="cart">
+            <tr>
+                <th>Item-ID</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Standard Price</th>
+                <th>Rebate</th>
+                <th>Rebate Reason</th>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="column1">
+        <h2>Order Summary</h2>
+
+        <label class="label">Item Total (with item rebate) :</label> <input
+            type="text" id="itemTotal" disabled></input><br> <br> <label
+            class="label">Cart Rebate Amount:</label> <input type="text"
+                                                             id="cartRebateAmount" disabled></input><br> <br> <label
+            class="label">Cart Rebate Reason :</label> <input type="textarea"
+                                                              id="cartRebateReason" size="50" disabled></input> <br>
+        <br>
+        <label class="label">Final Amount :</label> <input type="text"
+                                                           id="finalAmount" disabled></input><br> <br>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="column1">
+        <h2>Place Order</h2>
+        <button type="button" id="buyButton" onclick="CheckoutHandler()">Buy</button>
+        <br>
+    </div>
+</div>
+
+</body>
+</html>
